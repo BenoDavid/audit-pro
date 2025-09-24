@@ -38,7 +38,7 @@ class BaseController {
       const items = await this.model.findAndCountAll({
         where: filterOptions,
         order: sortOptions,
-        ...paginationOptions
+        // ...paginationOptions
       });
 
       // Respond with paginated data and metadata
