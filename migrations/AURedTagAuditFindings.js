@@ -9,14 +9,21 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      images: {
+        type: Sequelize.TEXT,
+        allowNull: false
       },
-      createdBy: {
-        type: Sequelize.INTEGER
+      reason: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
+      findingBy: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       updatedBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING,
+        allowNull: true
       },
       createdAt: {
         allowNull: false,

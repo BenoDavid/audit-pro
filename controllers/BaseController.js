@@ -163,7 +163,6 @@ class BaseController {
     try {
       // Assuming the request body contains an array of items to create
       const items = Array.isArray(req.body) ? req.body : [req.body];
-
       // Create all records in batch
       const createdItems = await this.model.bulkCreate(items);
 

@@ -9,14 +9,28 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      shift: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      createdBy: {
-        type: Sequelize.INTEGER
+      location: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      subLocation: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      netScore: {
+        type: Sequelize.TINYINT,
+        allowNull: false
+      },
+      auditor: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       updatedBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

@@ -9,14 +9,44 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      department: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      scheduledDate: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      startedDate: {
+        type: Sequelize.DATE,
+        allowNull: true
+      },
+      status: {
+        type: Sequelize.STRING,
+        defaultValue: "Not Started"
+      },
+      scheduledBy: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      finalResult: {
+        type: Sequelize.TEXT,
+        allowNull: true
+      },
+      completedDate: {
+        type: Sequelize.DATE,
+        allowNull: true
       },
       createdBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       updatedBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING,
+        allowNull: true
       },
       createdAt: {
         allowNull: false,

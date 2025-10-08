@@ -9,14 +9,33 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      mediaType: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      url: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      order: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       createdBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING,
+        allowNull: false
       },
       updatedBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: true
       },
       createdAt: {
         allowNull: false,
