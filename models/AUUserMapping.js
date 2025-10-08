@@ -16,9 +16,27 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    employeeCode: {
+      type: DataTypes.STRING
+    },
+    profilePicture: {
+      type: DataTypes.STRING
+    },
+    belongsTo: {
+      type: DataTypes.STRING
+    },
+    createdBy: {
+      type: DataTypes.STRING
+    },
+    updatedBy:{
+      type:DataTypes.STRING
+      },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE},
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE}
 
   }, {
     sequelize,

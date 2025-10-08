@@ -15,11 +15,25 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true
+    },name: {
+      type: DataTypes.STRING
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
-
+    status: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    createdBy: {
+      type: DataTypes.STRING
+    },
+    updatedBy:{
+      type:DataTypes.STRING
+      },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE},
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE}
   }, {
     sequelize,
     modelName: 'AUDepartments',

@@ -16,9 +16,25 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    content: {
+      type: DataTypes.STRING
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    createdBy: {
+      type: DataTypes.STRING
+    },
+    updatedBy:{
+      type:DataTypes.STRING
+      },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE},
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE}
 
   }, {
     sequelize,

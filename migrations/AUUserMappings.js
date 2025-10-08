@@ -9,7 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      employeeCode: {
+        type: Sequelize.STRING
+      },
+      profilePicture: {
+        type: Sequelize.STRING
+      },
+      belongsTo: {
         type: Sequelize.STRING
       },
       createdBy: {

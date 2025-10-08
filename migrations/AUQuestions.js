@@ -9,14 +9,18 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      content: {
         type: Sequelize.STRING
       },
+      status: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
+      },
       createdBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       updatedBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
