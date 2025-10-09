@@ -11,14 +11,47 @@ module.exports = (sequelize, DataTypes) => {
   }
   AULibrarySection.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    mediaType: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    order: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    createdBy: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

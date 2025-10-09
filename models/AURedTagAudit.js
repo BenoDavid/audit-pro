@@ -11,14 +11,42 @@ module.exports = (sequelize, DataTypes) => {
   }
   AURedTagAudit.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    shift: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    subLocation: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    netScore: {
+      type: DataTypes.TINYINT,
+      allowNull: false
+    },
+    auditor: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

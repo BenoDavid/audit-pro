@@ -11,14 +11,35 @@ module.exports = (sequelize, DataTypes) => {
   }
   AU6SAuditFinding.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    images: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    reason: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    findingBy: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

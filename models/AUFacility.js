@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   AUFacility.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
     name: {
       type: DataTypes.STRING
@@ -26,15 +26,17 @@ module.exports = (sequelize, DataTypes) => {
     createdBy: {
       type: DataTypes.STRING
     },
-    updatedBy:{
-      type:DataTypes.STRING
-      },
+    updatedBy: {
+      type: DataTypes.STRING
+    },
     createdAt: {
       allowNull: false,
-      type: DataTypes.DATE},
+      type: DataTypes.DATE
+    },
     updatedAt: {
       allowNull: false,
-      type: DataTypes.DATE}
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

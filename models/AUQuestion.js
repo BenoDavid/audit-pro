@@ -11,13 +11,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   AUQuestion.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
     content: {
       type: DataTypes.STRING
+    },
+    images: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     status: {
       type: DataTypes.BOOLEAN,
@@ -26,15 +30,17 @@ module.exports = (sequelize, DataTypes) => {
     createdBy: {
       type: DataTypes.STRING
     },
-    updatedBy:{
-      type:DataTypes.STRING
-      },
+    updatedBy: {
+      type: DataTypes.STRING
+    },
     createdAt: {
       allowNull: false,
-      type: DataTypes.DATE},
+      type: DataTypes.DATE
+    },
     updatedAt: {
       allowNull: false,
-      type: DataTypes.DATE}
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

@@ -9,8 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      questionGroupId: {
+        type: Sequelize.INTEGER
+      },
+      locationId: {
+        type: Sequelize.INTEGER
+      },
+      status: {
+        type: Sequelize.STRING,
+        defaultValue: "active"
       },
       createdBy: {
         type: Sequelize.INTEGER

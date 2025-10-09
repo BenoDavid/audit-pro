@@ -11,14 +11,35 @@ module.exports = (sequelize, DataTypes) => {
   }
   AULibraryCategory.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    order: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    createdBy: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

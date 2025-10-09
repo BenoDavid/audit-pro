@@ -15,6 +15,13 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      for: {
+        type: Sequelize.STRING //6s or redtag
+      },
+      images: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
       status: {
         type: Sequelize.BOOLEAN,
         defaultValue: true

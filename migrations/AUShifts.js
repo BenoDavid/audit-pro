@@ -12,6 +12,14 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      startTime: {
+        allowNull: true,
+        type: Sequelize.TIME
+      },
+      endTime: {
+        allowNull: true,
+        type: Sequelize.TIME
+      },
       status: {
         type: Sequelize.BOOLEAN,
         defaultValue: true

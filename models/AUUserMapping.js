@@ -11,12 +11,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   AUUserMapping.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
     employeeCode: {
+      type: DataTypes.STRING
+    },
+    employeeName: {
       type: DataTypes.STRING
     },
     profilePicture: {
@@ -26,17 +29,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     createdBy: {
-      type: DataTypes.STRING
+      type: DataTypes.INTEGER
     },
-    updatedBy:{
-      type:DataTypes.STRING
-      },
+    updatedBy: {
+      type: DataTypes.INTEGER
+    },
     createdAt: {
       allowNull: false,
-      type: DataTypes.DATE},
+      type: DataTypes.DATE
+    },
     updatedAt: {
       allowNull: false,
-      type: DataTypes.DATE}
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

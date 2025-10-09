@@ -11,14 +11,35 @@ module.exports = (sequelize, DataTypes) => {
   }
   AUQuestionGroupLocationMapper.init({
     id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER
     },
-
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    questionGroupId: {
+      type: DataTypes.INTEGER
+    },
+    locationId: {
+      type: DataTypes.INTEGER
+    },
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: "active"
+    },
+    createdBy: {
+      type: DataTypes.INTEGER
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
 
   }, {
     sequelize,

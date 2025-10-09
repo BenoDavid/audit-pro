@@ -12,6 +12,9 @@ module.exports = {
       employeeCode: {
         type: Sequelize.STRING
       },
+      employeeName: {
+        type: Sequelize.STRING
+      },
       profilePicture: {
         type: Sequelize.STRING
       },
