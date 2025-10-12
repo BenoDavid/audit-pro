@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AULibraryCategories',
+    modelName: 'AULibraryCategory',
   });
   return AULibraryCategory;
 };

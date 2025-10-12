@@ -12,6 +12,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      facilityId: {
+        type: Sequelize.INTEGER
+      },
       status: {
         type: Sequelize.BOOLEAN,
         defaultValue: true

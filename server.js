@@ -27,13 +27,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Parse cookies
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // Set secure headers
-app.use(helmet());
+// app.use(helmet());
 
 // Prevent XSS attacks
-app.use(xssClean());
+// app.use(xssClean());
 
 // Prevent HTTP param pollution
 // app.use(hpp());

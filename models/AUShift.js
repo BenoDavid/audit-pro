@@ -19,6 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING
     },
+    facilityId: {
+      type: DataTypes.INTEGER
+    },
     startTime: {
       allowNull: true,
       type: DataTypes.TIME
@@ -48,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AUShifts',
+    modelName: 'AUShift',
   });
   return AUShift;
 };

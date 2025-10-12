@@ -66,7 +66,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AURedTagAuditSchedules',
+    modelName: 'AURedTagAuditSchedule',
   });
   return AURedTagAuditSchedule;
 };

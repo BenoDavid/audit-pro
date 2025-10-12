@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AU6SAuditCorrectiveActions',
+    modelName: 'AU6SAuditCorrectiveAction',
   });
   return AU6SAuditCorrectiveAction;
 };

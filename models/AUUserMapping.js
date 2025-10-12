@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    departmentId: {
+      type: DataTypes.INTEGER
+    },
     employeeCode: {
       type: DataTypes.STRING
     },
@@ -45,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AUUserMappings',
+    modelName: 'AUUserMapping',
   });
   return AUUserMapping;
 };

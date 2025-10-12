@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      categoryId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       title: {
         type: Sequelize.STRING,
         allowNull: false
@@ -34,7 +38,7 @@ module.exports = {
         allowNull: false
       },
       updatedBy: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
       },
       createdAt: {

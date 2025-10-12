@@ -12,6 +12,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      facilityId: {
+        type: Sequelize.INTEGER
+      },
       startTime: {
         allowNull: true,
         type: Sequelize.TIME

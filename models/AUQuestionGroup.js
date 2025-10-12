@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AUQuestionGroups',
+    modelName: 'AUQuestionGroup',
   });
   return AUQuestionGroup;
 };

@@ -7,6 +7,7 @@ const AUFacility = db.sequelizeDb2.models.AUFacility;
 class AUFacilitiesController extends BaseController {
 
   constructor() {
+    console.log(db.sequelizeDb2.models);
     super(AUFacility);
   }
 

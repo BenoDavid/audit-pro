@@ -19,6 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING
     },
+    locationId: {
+      type: DataTypes.INTEGER
+    },
     status: {
       type: DataTypes.BOOLEAN,
       defaultValue: true
@@ -40,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AUSubLocations',
+    modelName: 'AUSubLocation',
   });
   return AUSubLocation;
 };

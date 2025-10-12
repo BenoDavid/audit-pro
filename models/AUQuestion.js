@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    questionGroupId: {
+      type: DataTypes.INTEGER
+    },
     content: {
       type: DataTypes.STRING
     },
@@ -44,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AUQuestions',
+    modelName: 'AUQuestion',
   });
   return AUQuestion;
 };

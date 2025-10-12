@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AUFacilities',
+    modelName: 'AUFacility',
   });
   return AUFacility;
 };

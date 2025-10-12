@@ -9,6 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      questionGroupId: {
+        type: Sequelize.INTEGER
+      },
       content: {
         type: Sequelize.STRING
       },

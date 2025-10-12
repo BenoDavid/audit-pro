@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    categoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -41,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     updatedBy: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true
     },
     createdAt: {
@@ -55,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AULibrarySections',
+    modelName: 'AULibrarySection',
   });
   return AULibrarySection;
 };

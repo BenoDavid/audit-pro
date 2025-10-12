@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     sequelize,
-    modelName: 'AUQuestionGroupLocationMappers',
+    modelName: 'AUQuestionGroupLocationMapper',
   });
   return AUQuestionGroupLocationMapper;
 };

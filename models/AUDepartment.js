@@ -11,35 +11,38 @@ module.exports = (sequelize, DataTypes) => {
   }
   AUDepartment.init({
     id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: DataTypes.INTEGER
-      },
-      name: {
-        type: DataTypes.STRING
-      },
-      status: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true
-      },
-      createdBy: {
-        type: DataTypes.STRING
-      },
-      updatedBy: {
-        type: DataTypes.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: DataTypes.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: DataTypes.DATE
-      }
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    name: {
+      type: DataTypes.STRING
+    },
+    facilityId: {
+      type: DataTypes.INTEGER
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    createdBy: {
+      type: DataTypes.STRING
+    },
+    updatedBy: {
+      type: DataTypes.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
   }, {
     sequelize,
-    modelName: 'AUDepartments',
+    modelName: 'AUDepartment',
   });
   return AUDepartment;
 };
