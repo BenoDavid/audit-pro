@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AUQuestion extends Model {
 
     static associate(models) {
-
+      AUQuestion.belongsTo(models.AUQuestionGroup, {
+        foreignKey: 'questionGroupId',
+        as: 'questionGroup'
+      });
     }
   }
   AUQuestion.init({

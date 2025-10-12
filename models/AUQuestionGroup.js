@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AUQuestionGroup extends Model {
 
     static associate(models) {
-
+      AUQuestionGroup.hasMany(models.AUQuestion, {
+        foreignKey: 'questionGroupId',
+        as: 'questions'
+      });
     }
   }
   AUQuestionGroup.init({

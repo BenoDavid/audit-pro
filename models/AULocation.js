@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'locationId',
         as: 'subLocations'
       });
+      
     }
   }
   AULocation.init({
