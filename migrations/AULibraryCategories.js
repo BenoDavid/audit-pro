@@ -22,7 +22,7 @@ module.exports = {
         allowNull: false
       },
       updatedBy: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
       },
       createdAt: {
