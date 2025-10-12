@@ -12,6 +12,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      questionGroupId: {
+        type: Sequelize.INTEGER
+      },
       facilityId: {
         type: Sequelize.INTEGER
       },

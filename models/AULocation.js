@@ -26,6 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING
     },
+    questionGroupId: {
+      type: DataTypes.INTEGER
+    },
     facilityId: {
       type: DataTypes.INTEGER
     },
