@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AUShift extends Model {
 
     static associate(models) {
-
+      AUShift.belongsTo(models.AUFacility, {
+        foreignKey: 'facilityId',
+        as: 'facility'
+      });
     }
   }
   AUShift.init({

@@ -9,10 +9,12 @@ class AU6SAuditSchedulesController extends BaseController {
   constructor() {
     super(AU6SAuditSchedule);
   }
+
   async getById(req, res) {
     try {
       const item = await this.model.findOne({
         where: { id: req.params.id },
+        attributes: ["id", "title", "scheduledDate", "status", "scheduledBy", "createdBy"],
         include: [
           {
             model: this.model.associations.audits.target,
@@ -21,7 +23,26 @@ class AU6SAuditSchedulesController extends BaseController {
           {
             model: this.model.associations.facility.target,
             as: 'facility',
-            attributes: ["name"],
+            attributes: ["id", "name"],
+            include: [{
+              model: this.model.associations.facility.target?.associations.locations.target,
+              as: 'locations',
+              attributes: ["id", "name"],
+              include: [{
+                model: this.model.associations.facility.target?.associations.locations.target?.associations.subLocations?.target,
+                as: 'subLocations',
+                attributes: ["id", "name"],
+              }]
+            }, {
+              model: this.model.associations.facility.target?.associations.shifts.target,
+              as: 'shifts',
+              attributes: ["id", "name"],
+            }]
+          },
+          {
+            model: this.model.associations.department.target,
+            as: 'department',
+            attributes: ["id", "name"],
 
           },
         ],

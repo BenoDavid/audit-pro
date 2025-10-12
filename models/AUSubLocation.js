@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AUSubLocation extends Model {
 
     static associate(models) {
-
+      AUSubLocation.belongsTo(models.AULocation, {
+        foreignKey: 'locationId',
+        as: 'location'
+      });
     }
   }
   AUSubLocation.init({
