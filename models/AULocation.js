@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
   class AULocation extends Model {
 
     static associate(models) {
-      AULocation.belongsTo(models.AUFacility, {
-        foreignKey: 'facilityId',
-        as: 'facility'
+      AULocation.belongsTo(models.AUDepartment, {
+        foreignKey: 'departmentId',
+        as: 'department'
       });
       AULocation.hasMany(models.AUSubLocation, {
         foreignKey: 'locationId',
@@ -28,6 +28,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     questionGroupId: {
       type: DataTypes.INTEGER
+    },
+    departmentId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     },
     facilityId: {
       type: DataTypes.INTEGER

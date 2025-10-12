@@ -10,7 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'departmentId',
         as: 'schedules'
       });
-
+      AUDepartment.hasMany(models.AULocation, {
+        foreignKey: 'departmentId',
+        as: 'locations'
+      });
     }
   }
   AUDepartment.init({

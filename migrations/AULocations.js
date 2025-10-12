@@ -15,6 +15,10 @@ module.exports = {
       questionGroupId: {
         type: Sequelize.INTEGER
       },
+      departmentId: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
       facilityId: {
         type: Sequelize.INTEGER
       },
