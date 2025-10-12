@@ -13,8 +13,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      department: {
-        type: Sequelize.STRING,
+      facilityId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      departmentId: {
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       scheduledDate: {

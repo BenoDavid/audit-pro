@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AU6SAudit extends Model {
 
     static associate(models) {
-
+      AU6SAudit.belongsTo(models.AU6SAuditSchedule, {
+        foreignKey: 'scheduleId',
+        as: 'schedule'
+      });
     }
   }
   AU6SAudit.init({
@@ -16,15 +19,19 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    shift: {
+    scheduleId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    shiftId: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    location: {
+    locationId: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    subLocation: {
+    subLocationId: {
       type: DataTypes.STRING,
       allowNull: false
     },

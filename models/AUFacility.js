@@ -7,6 +7,11 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
 
+      AUFacility.hasMany(models.AU6SAuditSchedule, {
+        foreignKey: 'facilityId',
+        as: 'schedules'
+      });
+
     }
   }
   AUFacility.init({
