@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    auditId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     images: {
       type: DataTypes.TEXT,
       allowNull: false
