@@ -22,7 +22,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     images: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      get() {
+        const value = this.getDataValue('images');
+        return value ? JSON.parse(value) : {};
+      },
+      set(value) {
+        this.setDataValue('images', JSON.stringify(value));
+      }
     },
     message: {
       type: DataTypes.TEXT,
