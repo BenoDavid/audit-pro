@@ -19,6 +19,11 @@ class AU6SAuditSchedulesController extends BaseController {
           {
             model: this.model.associations.audits.target,
             as: 'audits',
+            include: [{
+              model: this.model.associations.audits.target?.associations.location.target,
+              as: 'location',
+              attributes: ["name"],
+            }]
           },
           {
             model: this.model.associations.facility.target,

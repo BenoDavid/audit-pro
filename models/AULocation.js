@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'locationId',
         as: 'subLocations'
       });
-      
+      AULocation.hasMany(models.AU6SAudit, {
+        foreignKey: 'locationId',
+        as: 'audits'
+      });
     }
   }
   AULocation.init({

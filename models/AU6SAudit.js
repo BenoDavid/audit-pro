@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'scheduleId',
         as: 'schedule'
       });
+      AU6SAudit.belongsTo(models.AULocation, {
+        foreignKey: 'locationId',
+        as: 'location'
+      });
     }
   }
   AU6SAudit.init({
