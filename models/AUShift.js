@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'facilityId',
         as: 'facility'
       });
+      AUShift.hasMany(models.AU6SAudit, {
+        foreignKey: 'shiftId',
+        as: 'audits'
+      });
     }
   }
   AUShift.init({

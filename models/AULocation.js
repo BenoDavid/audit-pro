@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'locationId',
         as: 'audits'
       });
+      AULocation.belongsTo(models.AUQuestionGroup, {
+        foreignKey: 'questionGroupId',
+        as: 'questionGroup'
+      });
     }
   }
   AULocation.init({

@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'questionGroupId',
         as: 'questions'
       });
+      AUQuestionGroup.hasMany(models.AULocation, {
+        foreignKey: 'questionGroupId',
+        as: 'locations'
+      });
     }
   }
   AUQuestionGroup.init({
