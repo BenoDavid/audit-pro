@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AU6SAuditFinding extends Model {
 
     static associate(models) {
-
+      AU6SAuditFinding.belongsTo(models.AU6SAudit, {
+        foreignKey: 'auditId',
+        as: 'audit'
+      });
     }
   }
   AU6SAuditFinding.init({
@@ -15,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER
+    },
+    auditId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     images: {
       type: DataTypes.TEXT,

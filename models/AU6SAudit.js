@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'shiftId',
         as: 'shift'
       });
+      AU6SAudit.hasOne(models.AU6SAuditFinding, {
+        foreignKey: 'auditId',
+        as: 'finding'
+      });
     }
   }
   AU6SAudit.init({

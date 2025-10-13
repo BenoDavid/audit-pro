@@ -57,7 +57,12 @@ class AU6SAuditsController extends BaseController {
             as: 'shift',
             attributes: ["name"],
 
-          },
+          }, {
+            model: this.model.associations.finding.target,
+            as: 'finding',
+            attributes: ["images", "reason"],
+
+          }
         ],
       });
 
