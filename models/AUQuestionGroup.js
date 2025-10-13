@@ -30,7 +30,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     images: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
+      get() {
+        const value = this.getDataValue('images');
+        return value ? JSON.parse(value) : {};
+      },
+      set(value) {
+        this.setDataValue('images', JSON.stringify(value));
+      }
     },
     status: {
       type: DataTypes.BOOLEAN,
