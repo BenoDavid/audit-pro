@@ -6,7 +6,18 @@ module.exports = (sequelize, DataTypes) => {
   class AURedTagAuditSchedule extends Model {
 
     static associate(models) {
-
+      AURedTagAuditSchedule.hasMany(models.AURedTagAudit, {
+        foreignKey: 'scheduleId',
+        as: 'audits'
+      });
+      AURedTagAuditSchedule.belongsTo(models.AUFacility, {
+        foreignKey: 'facilityId',
+        as: 'facility'
+      });
+      AURedTagAuditSchedule.belongsTo(models.AUDepartment, {
+        foreignKey: 'departmentId',
+        as: 'department'
+      });
     }
   }
   AURedTagAuditSchedule.init({
@@ -20,8 +31,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    department: {
-      type: DataTypes.STRING,
+    facilityId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    departmentId: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     scheduledDate: {

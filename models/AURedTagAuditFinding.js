@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AURedTagAuditFinding extends Model {
 
     static associate(models) {
-
+      AURedTagAuditFinding.belongsTo(models.AURedTagAudit, {
+        foreignKey: 'auditId',
+        as: 'audit'
+      });
     }
   }
   AURedTagAuditFinding.init({
@@ -16,9 +19,20 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    auditId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     images: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      get() {
+        const value = this.getDataValue('images');
+        return value ? JSON.parse(value) : {};
+      },
+      set(value) {
+        this.setDataValue('images', JSON.stringify(value));
+      }
     },
     reason: {
       type: DataTypes.TEXT,

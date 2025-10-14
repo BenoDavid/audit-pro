@@ -6,7 +6,26 @@ module.exports = (sequelize, DataTypes) => {
   class AURedTagAudit extends Model {
 
     static associate(models) {
-
+      AURedTagAudit.belongsTo(models.AURedTagAuditSchedule, {
+        foreignKey: 'scheduleId',
+        as: 'schedule'
+      });
+      AURedTagAudit.belongsTo(models.AULocation, {
+        foreignKey: 'locationId',
+        as: 'location'
+      });
+      AURedTagAudit.belongsTo(models.AUShift, {
+        foreignKey: 'shiftId',
+        as: 'shift'
+      });
+      AURedTagAudit.hasOne(models.AURedTagAuditFinding, {
+        foreignKey: 'auditId',
+        as: 'finding'
+      });
+      AURedTagAudit.hasOne(models.AURedTagAuditCorrectiveAction, {
+        foreignKey: 'auditId',
+        as: 'correctiveAction'
+      });
     }
   }
   AURedTagAudit.init({
@@ -16,16 +35,44 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    shift: {
+    scheduleId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    shiftId: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    location: {
+    locationId: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    subLocation: {
+    subLocationId: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    safety: {
+      type: DataTypes.TINYINT,
+      allowNull: false
+    },
+    sort: {
+      type: DataTypes.TINYINT,
+      allowNull: false
+    },
+    setInOrder: {
+      type: DataTypes.TINYINT,
+      allowNull: false
+    },
+    shine: {
+      type: DataTypes.TINYINT,
+      allowNull: false
+    },
+    standardize: {
+      type: DataTypes.TINYINT,
+      allowNull: false
+    },
+    sustain: {
+      type: DataTypes.TINYINT,
       allowNull: false
     },
     netScore: {
@@ -33,6 +80,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     auditor: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    status: {
       type: DataTypes.STRING,
       allowNull: false
     },
