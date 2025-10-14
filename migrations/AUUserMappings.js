@@ -47,10 +47,10 @@ module.exports = {
         defaultValue: true
       },
       createdBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       updatedBy: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

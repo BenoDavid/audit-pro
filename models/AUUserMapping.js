@@ -54,10 +54,10 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: true
     },
     createdBy: {
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     },
     updatedBy: {
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: false,
