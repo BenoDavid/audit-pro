@@ -62,6 +62,11 @@ class AU6SAuditsController extends BaseController {
             as: 'finding',
             attributes: ["images", "reason"],
 
+          }, {
+            model: this.model.associations.correctiveAction.target,
+            as: 'correctiveAction',
+            attributes: ["images", "message"],
+
           }
         ],
       });

@@ -12,6 +12,18 @@ module.exports = {
       departmentId: {
         type: Sequelize.INTEGER
       },
+      shiftId: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
+      locationId: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
+      subLocationId: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
       employeeCode: {
         type: Sequelize.STRING
       },
@@ -19,10 +31,20 @@ module.exports = {
         type: Sequelize.STRING
       },
       profilePicture: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: true
       },
-      belongsTo: {
-        type: Sequelize.STRING
+      isRootUser: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
+      reportTo: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      isActive: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       createdBy: {
         type: Sequelize.INTEGER

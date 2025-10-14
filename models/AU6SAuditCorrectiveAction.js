@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AU6SAuditCorrectiveAction extends Model {
 
     static associate(models) {
-
+      AU6SAuditCorrectiveAction.belongsTo(models.AU6SAudit, {
+        foreignKey: 'auditId',
+        as: 'audit'
+      });
     }
   }
   AU6SAuditCorrectiveAction.init({

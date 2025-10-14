@@ -19,6 +19,18 @@ module.exports = (sequelize, DataTypes) => {
     departmentId: {
       type: DataTypes.INTEGER
     },
+    shiftId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    locationId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    subLocationId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     employeeCode: {
       type: DataTypes.STRING
     },
@@ -26,10 +38,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     profilePicture: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: true
     },
-    belongsTo: {
-      type: DataTypes.STRING
+    isRootUser: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    reportTo: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    isActive: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
     },
     createdBy: {
       type: DataTypes.INTEGER

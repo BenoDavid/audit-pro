@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'auditId',
         as: 'finding'
       });
+      AU6SAudit.hasOne(models.AU6SAuditCorrectiveAction, {
+        foreignKey: 'auditId',
+        as: 'correctiveAction'
+      });
     }
   }
   AU6SAudit.init({
