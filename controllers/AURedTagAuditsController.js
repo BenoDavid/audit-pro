@@ -13,7 +13,7 @@ class AURedTagAuditsController extends BaseController {
     try {
       const item = await this.model.findOne({
         where: { id: req.params.id },
-        attributes: ["auditor", "createdAt", "safety", "sort", "setInOrder", "shine", "standardize", "sustain", "netScore", "auditor", "status"],
+        attributes: ["auditor", "createdAt", "netScore", "auditor", "status"],
         include: [
           {
             model: this.model.associations.schedule.target,
@@ -56,16 +56,6 @@ class AURedTagAuditsController extends BaseController {
             model: this.model.associations.shift.target,
             as: 'shift',
             attributes: ["name"],
-
-          }, {
-            model: this.model.associations.finding.target,
-            as: 'finding',
-            attributes: ["images", "reason"],
-
-          }, {
-            model: this.model.associations.correctiveAction.target,
-            as: 'correctiveAction',
-            attributes: ["images", "message"],
 
           }
         ],
