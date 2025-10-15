@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'departmentId',
         as: 'schedules'
       });
+      AUDepartment.hasMany(models.AURedTagAuditSchedule, {
+        foreignKey: 'departmentId',
+        as: 'redTagSchedules'
+      });
       AUDepartment.hasMany(models.AULocation, {
         foreignKey: 'departmentId',
         as: 'locations'

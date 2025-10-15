@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'facilityId',
         as: 'schedules'
       });
-      // AUFacility.hasMany(models.AULocation, {
-      //   foreignKey: 'facilityId',
-      //   as: 'locations'
-      // });
+      AUFacility.hasMany(models.AURedTagAuditSchedule, {
+        foreignKey: 'facilityId',
+        as: 'redTagSchedules'
+      });
       AUFacility.hasMany(models.AUShift, {
         foreignKey: 'facilityId',
         as: 'shifts'

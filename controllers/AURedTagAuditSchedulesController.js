@@ -16,10 +16,10 @@ class AURedTagAuditSchedulesController extends BaseController {
         attributes: ["id", "title", "scheduledDate", "status", "scheduledBy", "createdBy"],
         include: [
           {
-            model: this.model.associations.audits.target,
-            as: 'audits',
+            model: this.model.associations.redTagAudits.target,
+            as: 'redTagAudits',
             include: [{
-              model: this.model.associations.audits.target?.associations.location.target,
+              model: this.model.associations.redTagAudits.target?.associations.location.target,
               as: 'location',
               attributes: ["name"],
             }]

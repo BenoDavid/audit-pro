@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'locationId',
         as: 'audits'
       });
+      AULocation.hasMany(models.AURedTagAudit, {
+        foreignKey: 'locationId',
+        as: 'redTagAudits'
+      });
       AULocation.belongsTo(models.AUQuestionGroup, {
         foreignKey: 'questionGroupId',
         as: 'questionGroup'
