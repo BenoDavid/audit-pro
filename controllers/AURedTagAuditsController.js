@@ -30,7 +30,7 @@ class AURedTagAuditsController extends BaseController {
           {
             model: this.model.associations.location.target,
             as: 'location',
-            attributes: ["name", "questionGroupId"],
+            attributes: ["name", "questionGroupId", "redTagQuestionGroupId"],
             include: [
               {
                 model: this.model.associations.location.target?.associations?.department.target,
@@ -38,12 +38,12 @@ class AURedTagAuditsController extends BaseController {
                 attributes: ["name"],
               },
               {
-                model: this.model.associations.location.target?.associations?.questionGroup.target,
-                as: 'questionGroup',
+                model: this.model.associations.location.target?.associations?.redTagQuestionGroup.target,
+                as: 'redTagQuestionGroup',
                 attributes: ["images", "description"],
                 include: [
                   {
-                    model: this.model.associations.location.target?.associations?.questionGroup.target?.associations?.questions.target,
+                    model: this.model.associations.location.target?.associations?.redTagQuestionGroup.target?.associations?.questions.target,
                     as: 'questions',
                     attributes: ["content"],
 
