@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'questionGroupId',
         as: 'questionGroup'
       });
+      AULocation.belongsTo(models.AUQuestionGroup, {
+        foreignKey: 'redTagQuestionGroupId',
+        as: 'redTagQuestionGroup'
+      });
     }
   }
   AULocation.init({
@@ -39,6 +43,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     questionGroupId: {
+      type: DataTypes.INTEGER
+    },
+    redTagQuestionGroupId: {
       type: DataTypes.INTEGER
     },
     departmentId: {

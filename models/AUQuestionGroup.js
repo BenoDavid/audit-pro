@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'questionGroupId',
         as: 'locations'
       });
+      AUQuestionGroup.hasMany(models.AULocation, {
+        foreignKey: 'redTagQuestionGroupId',
+        as: 'redTagLocations'
+      });
     }
   }
   AUQuestionGroup.init({
