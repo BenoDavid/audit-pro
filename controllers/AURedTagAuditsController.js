@@ -57,6 +57,16 @@ class AURedTagAuditsController extends BaseController {
             as: 'shift',
             attributes: ["name"],
 
+          }, {
+            model: this.model.associations.finding.target,
+            as: 'finding',
+            attributes: ["images", "reason"],
+
+          }, {
+            model: this.model.associations.correctiveAction.target,
+            as: 'correctiveAction',
+            attributes: ["images", "message"],
+
           }
         ],
       });
