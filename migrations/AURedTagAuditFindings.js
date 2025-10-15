@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      auditId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       images: {
         type: Sequelize.TEXT,
         allowNull: false

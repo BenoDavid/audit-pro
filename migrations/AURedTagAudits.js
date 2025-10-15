@@ -9,15 +9,19 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      shift: {
+      scheduleId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      shiftId: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      location: {
+      locationId: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      subLocation: {
+      subLocationId: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -26,6 +30,10 @@ module.exports = {
         allowNull: false
       },
       auditor: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      status: {
         type: Sequelize.STRING,
         allowNull: false
       },
