@@ -13,10 +13,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       questionGroupId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: true
       },
       redTagQuestionGroupId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: true
       },
       departmentId: {
         type: Sequelize.INTEGER,

@@ -43,10 +43,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     questionGroupId: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: true
     },
     redTagQuestionGroupId: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: true
     },
     departmentId: {
       type: DataTypes.INTEGER,
