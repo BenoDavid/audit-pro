@@ -3,24 +3,13 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class AUDepartment extends Model {
+  class AULine extends Model {
 
     static associate(models) {
-      AUDepartment.hasMany(models.AU6SAuditSchedule, {
-        foreignKey: 'departmentId',
-        as: 'schedules'
-      });
-      AUDepartment.hasMany(models.AURedTagAuditSchedule, {
-        foreignKey: 'departmentId',
-        as: 'redTagSchedules'
-      });
-      AUDepartment.hasMany(models.AULocation, {
-        foreignKey: 'departmentId',
-        as: 'locations'
-      });
+
     }
   }
-  AUDepartment.init({
+  AULine.init({
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -37,10 +26,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       defaultValue: true
     },
-    isLineWiseAudit: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    },
     createdBy: {
       type: DataTypes.STRING
     },
@@ -55,9 +40,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.DATE
     }
+
   }, {
     sequelize,
-    modelName: 'AUDepartment',
+    modelName: 'AULine',
   });
-  return AUDepartment;
+  return AULine;
 };

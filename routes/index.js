@@ -20,6 +20,7 @@ const AURedTagAuditScheduleRouter = require('./AURedTagAuditScheduleRouter');
 const AUShiftRouter = require('./AUShiftRouter');
 const AUSubLocationRouter = require('./AUSubLocationRouter');
 const AUUserMappingRouter = require('./AUUserMappingRouter');
+const AULineRouter = require('./AULineRouter');
 
 
 // // Use routes
@@ -42,6 +43,7 @@ router.use('/AURedTagAuditScheduleRouter', AURedTagAuditScheduleRouter);
 router.use('/AUShiftRouter', AUShiftRouter);
 router.use('/AUSubLocationRouter', AUSubLocationRouter);
 router.use('/AUUserMappingRouter', AUUserMappingRouter);
+router.use('/AULineRouter', AULineRouter);
 
 
 module.exports = router;

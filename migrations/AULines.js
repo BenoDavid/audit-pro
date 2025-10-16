@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('AUDepartments', {
+    await queryInterface.createTable('AULines', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,13 +15,9 @@ module.exports = {
       facilityId: {
         type: Sequelize.INTEGER
       },
-      isLineWiseAudit: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
-      },
       status: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false
+        defaultValue: true
       },
       createdBy: {
         type: Sequelize.STRING
@@ -40,6 +36,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('AUDepartments');
+    await queryInterface.dropTable('AULines');
   }
 };
