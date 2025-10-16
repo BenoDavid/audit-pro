@@ -38,11 +38,11 @@ class AU6SAuditSchedulesController extends BaseController {
           {
             model: this.model.associations.department.target,
             as: 'department',
-            attributes: ["id", "name"],
+            attributes: ["id", "name", "isLineWiseAudit"],
             include: [{
               model: this.model.associations.department.target?.associations.locations.target,
               as: 'locations',
-              attributes: ["id", "name", "questionGroupId", "isLineWiseAudit"],
+              attributes: ["id", "name", "questionGroupId"],
               include: [{
                 model: this.model.associations.department.target?.associations.locations.target?.associations.subLocations?.target,
                 as: 'subLocations',
