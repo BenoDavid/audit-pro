@@ -41,7 +41,7 @@ class AURedTagAuditSchedulesController extends BaseController {
             include: [{
               model: this.model.associations.department.target?.associations.locations.target,
               as: 'locations',
-              attributes: ["id", "name", "questionGroupId", "redTagQuestionGroupId"],
+              attributes: ["id", "name", "questionGroupId", "redTagQuestionGroupId", "isLineWiseAudit"],
               include: [{
                 model: this.model.associations.department.target?.associations.locations.target?.associations.subLocations?.target,
                 as: 'subLocations',
