@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'facilityId',
         as: 'shifts'
       });
+      AUFacility.hasMany(models.AULine, {
+        foreignKey: 'facilityId',
+        as: 'lines'
+      });
     }
   }
   AUFacility.init({

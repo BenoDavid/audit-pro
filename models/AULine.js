@@ -6,7 +6,14 @@ module.exports = (sequelize, DataTypes) => {
   class AULine extends Model {
 
     static associate(models) {
-
+      AULine.belongsTo(models.AU6SAudit, {
+        foreignKey: 'lineId',
+        as: 'audits'
+      });
+      AULine.belongsTo(models.AUFacility, {
+        foreignKey: 'facilityId',
+        as: 'facility'
+      });
     }
   }
   AULine.init({

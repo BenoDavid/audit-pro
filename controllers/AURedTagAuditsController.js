@@ -13,7 +13,7 @@ class AURedTagAuditsController extends BaseController {
     try {
       const item = await this.model.findOne({
         where: { id: req.params.id },
-        attributes: ["auditor", "createdAt", "netScore", "auditor", "status"],
+        attributes: ["auditor", "lineId", "createdAt", "netScore", "auditor", "status"],
         include: [
           {
             model: this.model.associations.schedule.target,

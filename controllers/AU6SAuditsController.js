@@ -13,8 +13,13 @@ class AU6SAuditsController extends BaseController {
     try {
       const item = await this.model.findOne({
         where: { id: req.params.id },
-        attributes: ["auditor", "createdAt", "safety", "sort", "setInOrder", "shine", "standardize", "sustain", "netScore", "auditor", "status"],
+        attributes: ["auditor", "lineId", "createdAt", "safety", "sort", "setInOrder", "shine", "standardize", "sustain", "netScore", "auditor", "status"],
         include: [
+          {
+            model: this.model.associations.line.target,
+            as: 'line',
+            attributes: ["name"],
+          },
           {
             model: this.model.associations.schedule.target,
             as: 'schedule',

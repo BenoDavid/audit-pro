@@ -33,6 +33,10 @@ class AU6SAuditSchedulesController extends BaseController {
               model: this.model.associations.facility.target?.associations.shifts.target,
               as: 'shifts',
               attributes: ["id", "name"],
+            }, {
+              model: this.model.associations.facility.target?.associations.lines.target,
+              as: 'lines',
+              attributes: ["id", "name"],
             }]
           },
           {
