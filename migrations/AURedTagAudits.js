@@ -25,6 +25,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      lineId: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
       netScore: {
         type: Sequelize.TINYINT,
         allowNull: false

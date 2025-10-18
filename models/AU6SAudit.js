@@ -51,6 +51,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    lineId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     safety: {
       type: DataTypes.TINYINT,
       allowNull: false
