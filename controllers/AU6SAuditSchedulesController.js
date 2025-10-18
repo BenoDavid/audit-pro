@@ -16,15 +16,19 @@ class AU6SAuditSchedulesController extends BaseController {
         where: { id: req.params.id },
         attributes: ["id", "title", "scheduledDate", "status", "scheduledBy", "createdBy"],
         include: [
-          {
-            model: this.model.associations.audits.target,
-            as: 'audits',
-            include: [{
-              model: this.model.associations.audits.target?.associations.location.target,
-              as: 'location',
-              attributes: ["name"],
-            }]
-          },
+          // {
+          //   model: this.model.associations.audits.target,
+          //   as: 'audits',
+          //   include: [{
+          //     model: this.model.associations.audits.target?.associations.location.target,
+          //     as: 'location',
+          //     attributes: ["name"],
+          //   }, {
+          //     model: this.model.associations.audits.target?.associations.line.target,
+          //     as: 'line',
+          //     attributes: ["name"],
+          //   }]
+          // },
           {
             model: this.model.associations.facility.target,
             as: 'facility',
