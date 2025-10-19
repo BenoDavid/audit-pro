@@ -15,15 +15,15 @@ class AURedTagAuditSchedulesController extends BaseController {
         where: { id: req.params.id },
         attributes: ["id", "title", "scheduledDate", "status", "scheduledBy", "createdBy"],
         include: [
-          {
-            model: this.model.associations.redTagAudits.target,
-            as: 'redTagAudits',
-            include: [{
-              model: this.model.associations.redTagAudits.target?.associations.location.target,
-              as: 'location',
-              attributes: ["name"],
-            }]
-          },
+          // {
+          //   model: this.model.associations.redTagAudits.target,
+          //   as: 'redTagAudits',
+          //   include: [{
+          //     model: this.model.associations.redTagAudits.target?.associations.location.target,
+          //     as: 'location',
+          //     attributes: ["name"],
+          //   }]
+          // },
           {
             model: this.model.associations.facility.target,
             as: 'facility',
@@ -31,6 +31,10 @@ class AURedTagAuditSchedulesController extends BaseController {
             include: [{
               model: this.model.associations.facility.target?.associations.shifts.target,
               as: 'shifts',
+              attributes: ["id", "name"],
+            }, {
+              model: this.model.associations.facility.target?.associations.lines.target,
+              as: 'lines',
               attributes: ["id", "name"],
             }]
           },
