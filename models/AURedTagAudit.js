@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class AURedTagAudit extends Model {
 
     static associate(models) {
+      AURedTagAudit.belongsTo(models.AULine, {
+        foreignKey: 'lineId',
+        as: 'line'
+      });
       AURedTagAudit.belongsTo(models.AURedTagAuditSchedule, {
         foreignKey: 'scheduleId',
         as: 'schedule'
