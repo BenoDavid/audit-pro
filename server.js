@@ -55,7 +55,7 @@ app.use('/', limiter);
 
 
 // ------------------ Routes ------------------
-app.use('/api', authMiddleware, routes); // Main API routes with watchMan middleware
+app.use('/api/au', authMiddleware, routes); // Main API routes with watchMan middleware
 
 
 // ------------------ Error Handling ------------------
