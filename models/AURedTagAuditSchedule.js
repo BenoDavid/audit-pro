@@ -57,7 +57,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     finalResult: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
+      get() {
+        const value = this.getDataValue('finalResult');
+        return value ? JSON.parse(value) : [];
+      },
+      set(value) {
+        this.setDataValue('finalResult', JSON.stringify(value));
+      }
     },
     completedDate: {
       type: DataTypes.DATE,
